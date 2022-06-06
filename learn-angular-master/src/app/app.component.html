@@ -1,0 +1,14 @@
+<table class="table">
+  <tr *ngFor = "let el of dipendenti">
+    <td class="id">{{el.id}}</td>
+    <td>{{el.firstName}}</td>
+    <td>{{el.lastName}}</td>
+    <td>{{el.gender}}</td>
+    <td><button (click) = "Modifica(el)">Modifica</button></td>
+  </tr>
+</table>
+
+<div *ngIf="elMod != null">
+  <input type="text" [(ngModel)]="el.firstName">
+  <input type="text" [(ngModel)]="el.lastName">
+</div>
