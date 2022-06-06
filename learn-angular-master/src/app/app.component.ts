@@ -52,8 +52,22 @@ export class AppComponent {
   }];
 
   employee : Employee | null = null
+  title: any;
 
   Modifica(elMod : Employee) {
     this.employee = elMod;
+  }
+
+  Rimuovi(i:number){
+    this.dipendenti.splice(i, 1);
+  }
+
+  Aggiungi(){
+    this.employee = new Employee();
+    this.dipendenti.push(this.employee);
+  }
+
+  SalvareDati(){
+    this.employee = null;
   }
 }

@@ -1,14 +1,31 @@
-<table class="table">
-  <tr *ngFor = "let el of dipendenti">
-    <td class="id">{{el.id}}</td>
+<h1>Tabella dipendenti</h1>
+<button (click)="Aggiungi()">Aggiungi</button>
+<br><br>
+<table>
+  <th>Id</th>
+  <th>First_name</th>
+  <th>Last_name</th>
+  <th>Gender</th>
+  <th>Modify</th>
+  <th>Remove</th>
+  <tr *ngFor = "let el of dipendenti; index as i">
+    <td>{{el.id}}</td>
     <td>{{el.firstName}}</td>
     <td>{{el.lastName}}</td>
     <td>{{el.gender}}</td>
     <td><button (click) = "Modifica(el)">Modifica</button></td>
+    <td><button (click) = "Rimuovi(i)">Rimuovi</button></td>
   </tr>
 </table>
-
-<div *ngIf="elMod != null">
-  <input type="text" [(ngModel)]="el.firstName">
-  <input type="text" [(ngModel)]="el.lastName">
+<br>
+<div *ngIf="employee != null">
+  Id: <input type="text" [(ngModel)]="employee.id">
+  <br><br>
+  Nome: <input type="text" [(ngModel)]="employee.firstName">
+  <br><br>
+  Cognome: <input type="text" [(ngModel)]="employee.lastName">
+  <br><br>
+  Sesso: <input type="text" [(ngModel)]="employee.gender">
+  <br><br>
+  <button (click)="SalvareDati()">Salvare</button>
 </div>
