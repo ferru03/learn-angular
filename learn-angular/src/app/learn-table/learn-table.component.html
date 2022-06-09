@@ -1,0 +1,38 @@
+
+<table class="table table-striped">
+  <thead>
+    <tr scope="raw">
+      <th scope="col">ID</th>
+      <th scope="col">birth date</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+      <th scope="col"><button class="btn btn-success" (click)="Aggiungi()">Aggiungi</button></th>
+    </tr>
+  </thead>
+  <tr scope="raw" *ngFor="let el of dati; index as i">
+    <td>{{el.id}}</td>
+    <td>{{el.birthDate}}</td>
+    <td>{{el.firstName}}</td>
+    <td>{{el.lastName}}</td>
+    <td><button class="btn btn-outline-warning" (click)="Modifica(el)">Modifica</button></td>
+    <td><button class="btn btn-outline-danger" (click)="Elimina(i)">Elimina</button></td>
+  </tr>
+</table>
+
+
+
+<div *ngIf="elMod != null">
+  Id: <input type="text" [(ngModel)]="elMod.id">
+  <br><br>
+  Nome: <input type="text" [(ngModel)]="elMod.firstName">
+  <br><br>
+  Cognome: <input type="text" [(ngModel)]="elMod.lastName">
+  <br><br>
+  Sesso: <input type="text" [(ngModel)]="elMod.gender">
+  <br><br>
+  <button class="btn btn-success" (click)="SalvareDati()">Salvare</button>
+</div>
+
+
